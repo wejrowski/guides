@@ -1,24 +1,27 @@
-Protocol
-========
+Feature Workflow
+================
 
-A guide for getting things done.
-
-Maintain a Rails app
---------------------
+Maintenance of Rails app / structure
+------------------------------------
 
 * Avoid including files in source control that are specific to your
   development machine or process.
-* Delete local and remote feature branches after merging.
-* Perform work in a feature branch.
-* Rebase frequently to incorporate upstream changes.
-* Use a [pull request] for code reviews.
+* MORE ON WHERE TO PUT FILES
+  * /lib - ablah blah
+  * classes?
+  * vendor
 
-[pull request]: https://help.github.com/articles/using-pull-requests/
+Feature/Fix Process
+-------------------
 
-Write a feature
----------------
+**For patches (work that needs to be sent to production before next release)**
+branch off master, send pull-request to patch
+
+**For normal features and bugs**
+branch off release & send pull-request to release
 
 Create a local feature branch based off release.
+(anything we want to include on branch names?.. I don't care I suppose)
 
     git checkout release
     git pull
@@ -39,7 +42,10 @@ When you've staged the changes, commit them.
     git status
     git commit --verbose
 
-Write a [good commit message]. Example format:
+Write a [good commit message].
+(explanations for what to include?.. what changin, why, if bug, where it came from and solution?)
+
+Example format:
 
     Present-tense summary under 50 characters
 
@@ -53,6 +59,11 @@ Share your branch.
     git push origin <branch-name>
 
 Submit a [GitHub pull request].
+
+- PULL
+- REQUEST
+- BEST PRACTICES
+- (e.g. titles, names.. include links to Jira!)
 
 Ask for a code review in HipChat.
 
