@@ -3,7 +3,7 @@ Guides
 
 Guides for getting things done, programming well, and programming in style.
 
-* [Protocol](/protocol)
+* [Feature Workflow](/workflow)
 * [Code Review](/code-review)
 * [Best Practices](/best-practices)
 * [Style](/style)
