@@ -11,9 +11,11 @@ Create a local feature branch
 * For normal features and bugs
   * branch off release & send pull-request to release
 
-    git checkout release
-    git pull
-    git checkout -b <branch-name>
+```
+git checkout release
+git pull
+git checkout -b <branch-name>
+```
 
 Write and commit code
 ---------------------
