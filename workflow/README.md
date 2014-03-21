@@ -47,10 +47,11 @@ Write a [good commit message]. Example format:
 Share your branch
 -----------------
 
-Share and submit a [GitHub pull request].
+Share and submit a [GitHub pull request] (Note: to use git pull-request, install [hub](https://github.com/github/hub))
 
     git push origin <branch-name>
     git pull-request -b <upstream-account>:<branch-name> -h <my-account>:<branch-name>
+
 
 Write a great pull request message:
 
