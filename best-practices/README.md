@@ -94,6 +94,56 @@ Testing
 * Use a [Fake] to stub requests to external services.
 * Use integration tests to execute the entire app.
 * Use non-[SUT] methods in expectations when possible.
+* Use describe blocks for objects and methods ("given" scenarios)
+* Use context blocks for "when" scenarios
+* Avoid spec descriptions longer than 40 characters. Split into contexts if longer.
+* Prefer expect syntax
+* Use before blocks at the lowest scope necessary
+  * e.g. start within it blocks, then move into describe, then only if necessary for all tests put outside of those.
+* Use validation tests and place them at the top of the describe block
+* Declare instance method tests first then class methods
+* Use "#instance_method" at the beginning of instance method tests
+* Use ".class_method" at the beginning of class method tests
+
+Examples: 
+
+```ruby
+describe Admin::MyController do
+  describe "GET #edit" do
+    it "responds with 200 success" do
+      # code
+    end
+  end
+end
+
+describe User do
+
+  it { should validate_presence_of(:first_name) }
+  it { should belong_to(:account) }
+
+  describe "#instance_method" do
+    context "when a variation is happening" do
+      before(:each) do
+        # code
+      end 
+
+      it "does x" do
+        # code
+      end
+
+      it "does y" do
+        # code
+      end
+    end
+  end
+
+  describe ".class_method" do
+    # code
+  end
+end
+
+```
+
 
 [dependency injection]: http://en.wikipedia.org/wiki/Dependency_injection
 [`Delayed::Job` matcher]: https://gist.github.com/3186463
