@@ -1,28 +1,24 @@
-Protocol
-========
+Feature Workflow
+================
 
-A guide for getting things done.
+Create Branch
+-------------
 
-Maintain a Rails app
---------------------
+Create a local feature branch
 
-* Avoid including files in source control that are specific to your
-  development machine or process.
-* Delete local and remote feature branches after merging.
-* Perform work in a feature branch.
-* Rebase frequently to incorporate upstream changes.
-* Use a [pull request] for code reviews.
+* For patches (work that needs to be sent to production before next release)
+  * branch off master, send pull-request to patch
+* For normal features and bugs
+  * branch off release & send pull-request to release
 
-[pull request]: https://help.github.com/articles/using-pull-requests/
+```
+git checkout release
+git pull
+git checkout -b <branch-name>
+```
 
-Write a feature
----------------
-
-Create a local feature branch based off release.
-
-    git checkout release
-    git pull
-    git checkout -b <branch-name>
+Write and commit code
+---------------------
 
 Rebase frequently to incorporate upstream changes.
 
@@ -48,11 +44,25 @@ Write a [good commit message]. Example format:
 
     http:://project.management-system.com/ticket/123
 
-Share your branch.
+Share your branch
+-----------------
+
+Share and submit a [GitHub pull request] (Note: to use git pull-request, install [hub](https://github.com/github/hub))
 
     git push origin <branch-name>
+    git pull-request -b <upstream-account>:<branch-name> -h <my-account>:<branch-name>
 
-Submit a [GitHub pull request].
+
+Write a great pull request message:
+
+    Simple title
+
+    http:://project.management-system.com/ticket/123
+
+    - [ ] Tests pass
+    - [ ] QA passed
+
+    Other relevant info, or reflections/questions for everyone
 
 Ask for a code review in HipChat.
 
